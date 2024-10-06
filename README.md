@@ -14,8 +14,8 @@ Este proyecto utiliza Python para la creación de una API y el manejo de base de
 
 1. Clonar el repositorio:
    ```bash
-   git clone https://github.com/tu_usuario/tu_proyecto.git
-   cd tu_proyecto
+   git clone https://github.com/hernandovela/BackEnd-Entidades.git
+   cd BackEnd-Entidades
    ```
 
 2. Crear y activar el entorno virtual:
