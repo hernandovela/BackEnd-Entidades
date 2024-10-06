@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB} # Nombre de la base de datos
+      POSTGRES_USER: ${POSTGRES_USER} # Usuario para conectarse a la base de datos
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD} # Contraseña del usuario
+    ports:
+      - "5433:5432" # Exponemos el puerto 5432 (interno) como 5433 (externo)
+    volumes:
+      - entidad:/var/lib/postgresql/data # Volumen persistente para almacenar los datos
+      - ./base_datos.sql:/docker-entrypoint-initdb.d/base_datos.sql # El SQL se ejecutará automáticamente
+    networks:
+      - entidad_net # Red para conectar el servicio
+    command: postgres # Ejecutamos el servidor PostgreSQL normalmente
+
+networks:
+  entidad_net:
+    driver: bridge
+
+volumes:
+  entidad:

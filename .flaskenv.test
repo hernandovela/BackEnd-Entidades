@@ -1,0 +1,5 @@
+POSTGRES_USER=vela
+POSTGRES_PASSWORD=vela1234
+POSTGRES_DB=entidades
+JWT_SECRET_KEY=mi_clave_secreta_jwt
+PORT=5433
